@@ -17,10 +17,9 @@ public class TCPclient {
 
         // Create input and output streams for communication
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        FileOutputStream fileOutputStream = new FileOutputStream("received_file_client_" + clientId + ".txt");
 
         // Build the relative file path
-        String relativeFilePath = "6DIST_lab1/src/main/java/example.txt";
+        String relativeFilePath = "src/main/java/example.txt";
         String absoluteFilePath = new File(relativeFilePath).getAbsolutePath();
 
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);

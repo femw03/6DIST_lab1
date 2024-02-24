@@ -34,7 +34,7 @@ public class UDPserver {
         try {
 
             // Build the relative file path
-            String relativeFilePath = "6DIST_lab1/src/main/java/example.txt";
+            String relativeFilePath = "src/main/java/example.txt";
             String absoluteFilePath = new File(relativeFilePath).getAbsolutePath();
 
             File file = new File(absoluteFilePath);
