@@ -4,16 +4,17 @@ import java.io.*;
 import java.net.*;
 
 public class TCPclient {
+    private static final String SERVER_HOST = "localhost";
+    private static final int SERVER_PORT = 12345;
     public static void main(String[] args) throws IOException {
         if (args.length < 1) {
             System.err.println("Usage: java TCP.TCPclient <clientId>");
             System.exit(1);
         }
 
-        int clientId = Integer.parseInt(args[0]);
-
         // Connect to the server
-        Socket socket = new Socket("localhost", 12345);
+        Socket socket = new Socket(SERVER_HOST, SERVER_PORT);
+        System.out.println("Connected to the server");
 
         // Create input and output streams for communication
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

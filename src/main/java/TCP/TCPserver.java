@@ -4,12 +4,15 @@ import java.io.*;
 import java.net.*;
 
 public class TCPserver {
+    private static int PORT = 12345;
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(12345);
+        ServerSocket serverSocket = new ServerSocket(PORT);
+
+        System.out.println("Server started on port " + PORT);
 
         while (true) {
             Socket clientSocket = serverSocket.accept();
-            System.out.println("Accepted connection from: " + clientSocket.getInetAddress());
+            System.out.println("New client connected: " + clientSocket.getInetAddress());
 
             // Create a new thread to handle the client
             Thread clientHandlerThread = new Thread(() -> handleClient(clientSocket));

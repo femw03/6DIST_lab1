@@ -7,6 +7,8 @@ import UDP.UDPserver;
 
 public class Main {
     public static void main(String[] args) {
+        //System.out.println("Hello world!");
+
         // Start TCP server in a separate thread
         Thread tcpServerThread = new Thread(() -> {
             try {
