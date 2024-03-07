@@ -1,1 +1,1 @@
-bla bla bla
+UDP (User Datagram Protocol) is a connectionless protocol that sends data packets without establishing a dedicated connection, offering faster but less reliable communication. TCP (Transmission Control Protocol), on the other hand, is connection-oriented, ensuring reliable, ordered delivery of data through mechanisms like acknowledgment and retransmission, albeit with more overhead.

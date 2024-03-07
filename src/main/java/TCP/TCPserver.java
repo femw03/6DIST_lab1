@@ -4,11 +4,12 @@ import java.io.*;
 import java.net.*;
 
 public class TCPserver {
-    private static int PORT = 12345;
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(PORT);
+        String ip = args[0];
+        int port = Integer.parseInt(args[1]);
+        ServerSocket serverSocket = new ServerSocket(port);
 
-        System.out.println("Server started on port " + PORT);
+        System.out.println("TCP server started on port " + port);
 
         while (true) {
             Socket clientSocket = serverSocket.accept();
@@ -31,6 +32,7 @@ public class TCPserver {
 
             // Process the file request and send the file content
             sendFileContent(fileName, out);
+            System.out.println("Requested file sent to client");
 
             // Close the connection
             clientSocket.close();
